@@ -37,3 +37,54 @@ Before you begin, ensure you have the following installed:
 - Node.js
 - npm or yarn
 - PostgreSQL or any other database supported by Prisma
+
+Install the dependencies:
+
+For the frontend:
+   git clone https://github.com/barkinkoroglu/todocase1.git
+   cd todocase1
+
+2. Install the dependencies:
+
+For the frontend:
+    cd habit-tracker
+    npm install
+
+For the backend:
+    cd habit-backend
+    npm install
+
+3. Set up the database:
+
+Make sure to configure your database in the prisma/.env file. If you are using PostgreSQL, ensure the connection string is correct.
+
+4. Run the Prisma migration to create the database tables:
+    npx prisma migrate dev
+
+5. Start the backend server:
+
+   cd habit-backend
+   node src/index.ts
+
+The backend will run at http://localhost:4000.
+
+6.Start the frontend development server:
+
+cd habit-tracker
+npm start
+
+The frontend will run at http://localhost:3000.
+
+7.Access the application:
+
+The frontend will be accessible at http://localhost:3000 and the backend API at http://localhost:4000.
+
+
+
+
+
+
+
+
+
+
