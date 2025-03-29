@@ -1,0 +1,40 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Todo {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  status      Status   @default(Pending)  // Enum türü kullanılacak
+  priority    Priority @default(Medium)   // Enum türü kullanılacak
+  dueDate     DateTime? // Optional due date
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Enum'lar
+enum Status {
+  Pending
+  InProgress
+  Complete
+}
+
+enum Priority {
+  Low
+  Medium
+  High
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
